@@ -1,0 +1,57 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 200%;
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: whitesmoke;
+}
+
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+    color: whitesmoke;
+    font-size: 120%;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    color: whitesmoke;
+    font: size 120%;
+}
+
+a {
+    color:rgb(0, 207, 207);
+}
+
+.center {
+    margin: auto;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.title-letter {
+    display: inline-block;
+    animation: rotate 3s infinite ease-in-out;
+}
