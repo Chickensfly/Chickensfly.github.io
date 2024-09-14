@@ -39,21 +39,31 @@
     </header>
     <div class = "mainText">
         <div class = "center">
-            <h1>Article Title</h1>
+            <h1>Alarm Clock</h1>
             <h3>August 2024</h3>
-            <img src = "assets/me.png" width="600">
+            <img src = "assets/7-segment.png" width="500">
         </div>
         
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras molestie quam orci, id ornare dolor placerat in. Pellentesque vel nisl erat. Sed quis dapibus purus, et consequat velit. Donec scelerisque posuere quam, vel maximus nisl molestie et. Suspendisse tempor porttitor lorem non tempor. Vivamus sollicitudin felis nisi, ut ultrices erat placerat sed. Praesent non vestibulum odio. Suspendisse sit amet porttitor leo. Vestibulum ac quam elit. Cras aliquet, justo et hendrerit mattis, ex ex pretium magna, quis finibus lorem enim in ante. Etiam vel mollis nulla. Duis et venenatis sapien. Integer id porttitor urna. Etiam vitae cursus magna. Vivamus iaculis, mi quis mattis venenatis, felis nunc posuere velit, id rhoncus libero velit sit amet massa. Integer aliquam libero sed dictum sagittis.
-
-Nam aliquet laoreet justo non molestie. Quisque sollicitudin lectus vitae sodales iaculis. Suspendisse in arcu vel ex faucibus iaculis id a risus. Aliquam cursus eget metus quis egestas. Donec in tincidunt quam. Morbi gravida velit eu nisl dapibus pharetra. Donec elit dolor, suscipit quis nisi nec, bibendum ullamcorper sapien. Sed sodales, lorem ac aliquam gravida, sapien erat mattis nisl, nec ultrices dui justo ut enim. Nam nulla sem, ornare ac placerat non, vestibulum sit amet ligula. Cras non dictum lacus. Vestibulum vulputate eleifend felis sodales cursus.
-
-Mauris sem dui, gravida et neque a, venenatis suscipit justo. Nam gravida eget est ac tristique. Nulla egestas varius arcu eu scelerisque. Praesent ornare iaculis ex, et laoreet metus tempus eu. Praesent consectetur nisl at bibendum lobortis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus quis molestie metus, sed congue est. Integer fermentum urna eget elementum ullamcorper. Nunc rutrum sollicitudin lectus. Nunc ut felis cursus, molestie nisl sit amet, sodales arcu. Nunc at nisi malesuada, imperdiet augue non, lobortis velit. Maecenas vitae ex venenatis, tincidunt augue sed, malesuada nisi. Nunc porttitor nibh at suscipit interdum.
-
-Mauris congue justo porttitor ex elementum vehicula. In id magna mi. Donec ac elementum diam, eu molestie purus. Sed sodales condimentum pretium. Nulla et augue augue. Etiam euismod augue vitae risus luctus venenatis. Nunc congue iaculis leo et fringilla. Quisque lacinia blandit nisl, at molestie odio mollis vitae. Phasellus ipsum dui, porttitor rutrum purus non, ultricies egestas quam. Duis imperdiet dui ligula, bibendum viverra ligula feugiat at. Quisque pellentesque sodales nisi et rhoncus. Aenean pellentesque nunc volutpat odio tristique, aliquet viverra enim sagittis.
-
-Cras in purus eu tortor congue molestie sed vel lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent faucibus varius odio at ornare. Fusce sagittis arcu nibh, id tempor ante facilisis ut. Aenean tellus felis, efficitur ullamcorper condimentum a, volutpat at augue. Sed posuere lobortis dictum. Nam molestie leo id lorem lobortis mattis. Donec vitae molestie lectus. Sed quis ullamcorper sem.
+            Over the Summer, I wanted to decrease screen time by moving my phone out of my bedroom.
+            I did not have an alarm clock to fall back on if I kicked out my current waking solution 
+            so I elected to try an build one using a Raspberry Pi. As always, this was easier said 
+            than done.
+        </p>
+        <div class = "center">
+            <img src = "assets/alarm_clock.jpeg" width="400">
+        </div>
+        
+        <p style = "text-indent: 25px;">
+            The design incorporates a 7-segment display to display the time, buttons to snooze or
+            turn off the alarm, and a buzzer to act as the alarm itself. The code to determine when 
+            the buzzer should go off was delightfully straighforward and the software side of the 
+            alarm functionality was done within the hour. Incorporating the hardware took much more 
+            time. The buttons and the buzzer were easy to add into the mix, but the 7-segment display 
+            took much more time to get working. The final code that allowed the time to be displayed
+            took 6 nested loops to streamline the setup process and allow for each segment to be 
+            individually addressed within the code. Once the pins were set up, the task became trivial
+            once again as taking advantage of the predefined segments was a matter of plug-and-play.
         </p>
     </div>
     <footer>

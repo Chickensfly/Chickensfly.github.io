@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .gridItem {
+            color:transparent;
+        }
+        .header {
+            padding-top: 2%;
+            padding-left: 5%;
+        }
+        .center {
+            text-align: center;
+            padding: 4%;
+        }
+        .mainText {
+            padding-left: 16%;
+            padding-right: 16%;
+        }
+        .footer {
+            padding: 6%;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog entry</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class = "row header">
+            <a href = "index.html" class="gridItem">
+                <img id = "lowerj" alt = "J" src = "assets/LowercaseJ.png" width="60" class="title-letter">
+                <img id = "lowere1" alt = "e" src = "assets/LowercaseE.png" width="60" class="title-letter">
+                <img id = "lowerf1" alt = "f" src = "assets/LowercaseF.png" width="60" class="title-letter">
+                <img id = "lowerf2" alt = "f" src = "assets/LowercaseF.png" width="60" class="title-letter">
+            </a>
+        </div>
+    </header>
+    <div class = "mainText">
+        <div class = "center">
+            <h1>Wordle Clone</h1>
+            <h3>May 2024</h3>
+            <img src = "assets/wordle.png" width="500">
+        </div>
+        
+        <p>
+            I wanted to create a Wordle clone to understand the difficulties that come with making
+            a simple word game. Plus I love Wordle. My clone is played only through the terminal 
+            and the solution word is determined in the code, a random word chosen from a list of 
+            approved 5-letter possible solution words. As each guess is made, the word is returned
+            to the player - a letter made lowercase if it exists within the solution and uppercase 
+            if the placement of the letter is correct, otherwise the letter is discarded. 
+        </p>
+        <div class = "center">
+            <img src = "assets/wordleguesses.png" width="400">
+        </div>
+        <p style = "text-indent: 25px;">
+            The biggest challenge was accounting for guess words and solution words with multiple
+            of the same letter. A guess of 'SHEEN' on 'SHINE' returns both the 'e's as lowercase
+            since simply checking the solution for the presence of each letter does not consider
+            quantity. Instead, I updated the game to account for these cases by counting each 
+            appearance of each letter within the solution word. If there are repeated letter, it
+            is noted and also how many of each letter appears. When the guess word is being checked
+            against the solution repeated letters will be noted and given a counter which, when it
+            reaches 0, will no longer accept matching letters as being a part of the solution.
+        </p>
+    </div>
+    <footer>
+        <div class = "footer">
+
+        </div>
+    </footer>
+</body>
+</html>
