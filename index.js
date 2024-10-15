@@ -10,11 +10,16 @@ const loweri = document.getElementById("loweri");
 const loweru = document.getElementById("loweru");
 let id = setInterval(frame, 10);
 
+var top_z = 5;
+
+
 function enlargeImg(x) {
     x.style.transform = "scale(1.3)";
+    x.style.zIndex = ++top_z;
 }
 function normalizeImg(x) {
-    x.style.transform = "scale(1)";
+    x.style.transform = "initial";
+    x.style.zIndex = top_z - 1;
 }
 
 

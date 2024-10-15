@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Geopsychology</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 20px;
+            cursor: pointer;
+            z-index: 1000;
+            transform: scale(150%);
+        }
+
+        #prevButton {
+            left: 10px;
+        }
+
+        #nextButton {
+            right: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="map"></div>
+
+    <div id="prevButton" class="nav-button">⬅️ Prev</div>
+    <div id="nextButton" class="nav-button">Next ➡️</div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+     <script>
+        // Initialize the map and set its view to a specific location and zoom level
+        var map = L.map('map').setView([0,0], 13); 
+
+        var currentMarker = 0;
+
+        var markers = 
+
+        // 
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 17
+        }).addTo(map);
+
+
+        // Add a marker to the map
+        var vancouver = L.marker([49.26630381623448, -123.24580459782638]).addTo(map)
+            .bindPopup('<b>Beautiful British Columbia</b><br>'
+                + 'So I ended up here, attending the University of British Columbia. Here is where all my most beloved friends converge for 8 months of the year. This is where I have the opportunity to open lines of discourse with ' 
+                + 'people I may as well mistake for myself as I continue to reconcile my story. I am inclined to call this place home because it has molded me into someone I am more and more capable of recognizing.'
+                + ' '
+            )
+            .openPopup();
+
+        var mississauga = L.marker([43.558409955812344, -79.70267994407617]).addTo(map)
+            .bindPopup('<b>We are products of our environment. </b><br> I was born here in Mississauga, Ontario.'
+                +' I have limited memories of our home here since we moved to the states when I was four. Yet, passing through the neighborhood today invokes an undeniable sense of nostalgia.' 
+                + ' My older sister attended high school here and some of my best friends today were born and raised in this city. They are all fond of the diverse and welcoming community.'
+                + ' I had trouble feeling at home in my first year of high school. I daydreamt about how wonderful it would be to have spent my life here instead.'
+            )
+            .openPopup();
+            
+
+        var lakeOrion = L.marker([42.78415584830318, -83.23367301195874]).addTo(map)
+            .bindPopup('<b>This is home.</b><br> '
+                + ' I spent all of K-12 in Michigan. When I say \'home\' this is what I mean. I am still uncovering all the ways this place has influenced me. For the most part, Michigan'
+                + ' inspired a sense of adventure. I was a scout for every year I was eligible to do so. My time with them exposed me to the excitement of STEM and the joy of the outdoors.'
+                + ' In high school, I got to reverse the roles as I was given the opportunity to teach various subjects within STEM to elemtary and middle schoolers. I found myself through '
+                + 'creative applications of technology and service to others. When it came time to decide on Universities, I knew I had to switch to an environment where I could continue exploring my perspective and my interests.'
+            )
+            .openPopup();
+
+        var xian = L.marker([34.250862909269436, 108.98432298433374]).addTo(map)
+            .bindPopup('<b>My family history.</b><br>'
+                + 'I very well could have grown up here. This is where my parents met, at Xi\'an Jiaotong University where my father was pursuing a PhD and my mother was a teaching assistant. '
+                + 'They tell bittersweet tales of living under communism - forced to make the most of their minimal resources. Both are the first within their families to pursue postsecondary education. '
+                + 'I am unbelievably grateful for everything they have done to provide a better life for my sister and I. I am coming to terms with the fact that I will never be able to do as much for my parents as they have for me.'
+            )
+
+        const locations = [mississauga, xian, lakeOrion, vancouver];
+
+        function focusOnMarker(index) {
+            map.flyTo(locations[index].getLatLng(), 13);
+            locations[index].openPopup();
+        }
+
+        document.getElementById('prevButton').addEventListener('click', function() {
+            currentMarker = (currentMarker - 1 + locations.length) % locations.length;
+            focusOnMarker(currentMarker);
+        });
+
+        document.getElementById('nextButton').addEventListener('click', function() {
+            currentMarker = (currentMarker + 1) % locations.length;
+            focusOnMarker(currentMarker);
+        });
+
+        map.setView([43.558409955812344, -79.70267994407617], 12);
+        mississauga.openPopup();
+        
+    </script>
+</body>
+</html>
