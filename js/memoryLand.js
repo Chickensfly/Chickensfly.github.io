@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { FlyControls } from 'three/examples/jsm/controls/FlyControls.js';
 
-import Gallery from '../js/Gallery.js';
+import Gallery from '../js/gallery.js';
 
 let scene, camera, renderer, gallery, controls, clock, raycaster, hoveredObject;
 let acceptingInput = false;
