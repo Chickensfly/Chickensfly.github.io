@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemoryLand</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+                "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+            }
+        }
+	</script>
+</head>
+<body>
+    <div id="shape-panel">
+        <img src="../assets/gallery/text.png" id="text-shape" class="shape-option" alt="Text">
+        <img src="../assets/gallery/sphere.png" id="sphere-shape" class="shape-option" alt="Sphere">
+        <img src="../assets/gallery/box.png" id="box-shape" class="shape-option" alt="Box">
+    </div>
+    <div id="gallery"></div>
+    <script type = "module" src="../js/memoryLand.js"></script>
+</body>
+</html>
